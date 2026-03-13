@@ -1,0 +1,25 @@
+// settings.gradle
+//
+// Declares the root project name and the included modules.
+// Each include() call corresponds to a subdirectory containing a build.gradle.
+
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.name = "DaikinIRRemote"
+
+// Include the app module
+include ':app'

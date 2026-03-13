@@ -1,0 +1,68 @@
+// app/build.gradle
+//
+// Module-level Gradle build file.
+// Configures the Android application module: SDK versions, dependencies, etc.
+
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.daikin.irremote'
+
+    // Use a recent stable compileSdk (API 34 = Android 14)
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.daikin.irremote"
+        minSdk 21              // Android 5.0 — ConsumerIrManager available since API 19
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        viewBinding false   // Not used; we use findViewById directly for simplicity
+    }
+}
+
+dependencies {
+    // AppCompat — provides AppCompatActivity and Material button styles
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+
+    // Material Design components — used for CardView and theming
+    implementation 'com.google.android.material:material:1.12.0'
+
+    // CardView — the temperature display card
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+    // Core KTX — Kotlin extensions for Android framework APIs
+    implementation 'androidx.core:core-ktx:1.13.1'
+
+    // ConstraintLayout (optional; not used in this layout but common dependency)
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    // Unit testing (not required for the app to run)
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
+}

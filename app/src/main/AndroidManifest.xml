@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    AndroidManifest.xml
+
+    Declares:
+    - The TRANSMIT_IR_FRAMEWORK permission required to use ConsumerIrManager.
+    - The main Activity with a portrait-only orientation (natural for a remote).
+    - No INTERNET permission — the app is fully offline.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.daikin.irremote">
+
+    <!--
+        Required permission to use the ConsumerIrManager API.
+        Without this, transmit() will throw a SecurityException at runtime.
+    -->
+    <uses-permission android:name="android.permission.TRANSMIT_IR" />
+
+    <!--
+        Declare that this app uses (but does not require) an IR blaster.
+        Setting required="false" means the app can still be installed on
+        phones without an IR blaster — it will just show a warning message.
+        Change to required="true" if you want to restrict installs to IR
+        devices only (e.g. on the Play Store).
+    -->
+    <uses-feature
+        android:name="android.hardware.consumerir"
+        android:required="false" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.DaikinIRRemote">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name">
+
+            <!-- Make MainActivity the launcher entry point -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+    </application>
+</manifest>

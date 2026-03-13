@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    colors.xml
+    Colour palette for the Daikin IR Remote app.
+    All colours are defined here and referenced throughout the project.
+-->
+<resources>
+    <!-- ── Background ──────────────────────────────────────── -->
+    <color name="background">#1A1A2E</color>       <!-- Deep navy — main screen background -->
+    <color name="card_background">#16213E</color>   <!-- Slightly lighter navy for cards -->
+
+    <!-- ── Text ────────────────────────────────────────────── -->
+    <color name="white">#FFFFFF</color>
+    <color name="text_secondary">#8892A4</color>    <!-- Muted grey for labels -->
+
+    <!-- ── Power button states ─────────────────────────────── -->
+    <color name="power_on">#00C896</color>          <!-- Teal/green when AC is on -->
+    <color name="power_off">#E74C3C</color>         <!-- Red when AC is off -->
+
+    <!-- ── Temperature buttons ─────────────────────────────── -->
+    <color name="temp_button">#0F3460</color>       <!-- Dark blue for ▲/▼ buttons -->
+
+    <!-- ── Mode & fan speed buttons ────────────────────────── -->
+    <color name="selected_button">#0078D7</color>   <!-- Blue highlight for selected -->
+    <color name="selected_text">#FFFFFF</color>     <!-- White text on selected -->
+    <color name="unselected_button">#252547</color> <!-- Dark purple for unselected -->
+    <color name="unselected_text">#8892A4</color>   <!-- Muted text for unselected -->
+
+    <!-- ── System colours (required by AppCompat) ──────────── -->
+    <color name="colorPrimary">#0078D7</color>
+    <color name="colorPrimaryDark">#005BB5</color>
+    <color name="colorAccent">#00C896</color>
+</resources>
